@@ -1,0 +1,10 @@
+#sidebar {
+    background-color: rgb(204, 255, 202);
+    width: 100px;
+    height: 100vh;
+    margin: 20px 0;
+}
+
+#sidebar p{
+    color: rgb(54, 54, 54);
+}
