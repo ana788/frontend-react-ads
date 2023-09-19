@@ -20,9 +20,9 @@ const Membros = async () => {
         <div>
           <h1>Membros</h1>
           {
-            users.map((user) => {
+            users.map((user) => { //map - usado para percorrer array. Não dá pra usar map em objeto.
               return (
-                <CardUser key={user.id} user={user}/>
+                <CardUser key={user.id} user={user}/> //forma do react identificar os cards. Diferenciar um card do outro
               )
             })
           }
