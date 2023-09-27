@@ -4,6 +4,7 @@ import SideBar from "@/components/layout/SideBar"
 import ListMembers from "@/components/utils/ListMembers"
 
 
+
 const Membros = async () => {
 
   return (
@@ -11,14 +12,10 @@ const Membros = async () => {
       <Header />
       <div className="container">
         <SideBar />
-
         <div>
           <ListMembers />
-          {/*<p>{JSON.stringify(users)}</p>*/}
         </div>
-
       </div>
-
       <Footer />
     </>
 
