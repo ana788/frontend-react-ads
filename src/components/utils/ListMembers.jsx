@@ -18,6 +18,34 @@ const ListMembers = () => {
         getMembers()
     }, []) 
 
+const handleSubmit = async(event) => {
+    event.preventDefault()
+    const newUser = {
+        name: event.target.name.value,
+        email: event.target.email.value,
+        pass: event.target.pass.value,
+        avatar: event.target.foto.value
+    }
+
+    const response = await fetch(
+        'http://localhost:3300/user',
+        {
+            cache: 'no-store',
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newUser) //tranforma um objeto em uma string json
+        }
+    )
+    if(response.ok){
+        const result = await response.json()
+        console.log(result)
+        if(result?.sucess){
+            setUsers([...users, result.user])
+        }
+    }
+}
 
     return (
         <>
@@ -32,7 +60,7 @@ const ListMembers = () => {
             }
             <Modal isOpen={modalCadastrar} changeOpen={setmodalCadastrarIsOpen}>
                 <h1>Cadastros</h1>
-                <form>
+                <form onSubmit={handleSubmit}>
                     Nome:<input type="text" name="name"/><br/>
                     Email: <input type="text" name="email"/><br/>
                     Pass: <input type="text" name="pass"/><br/>
