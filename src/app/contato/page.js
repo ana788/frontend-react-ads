@@ -8,13 +8,14 @@ const Contato = () => {
         <>
             <Header />
             <div className="container">
-                <h1>Contato</h1>
-                <p>Fale conosco através do email: email@gmail.com</p>
-                <Button variant="primario" titulo="Login"/>
-                <Button variant="secundario" titulo="Cadastre-se"/>
-                <Button variant="ghost" titulo="Cancelar"/>
-
                 <SideBar />
+                <div>
+                    <h1>Contato</h1>
+                    <p>Fale conosco através do email: email@gmail.com</p>
+                    <Button variant="primario" titulo="Login" />
+                    <Button variant="secundario" titulo="Cadastre-se" />
+                    <Button variant="ghost" titulo="Cancelar" />
+                </div>
             </div>
             <Footer />
 
